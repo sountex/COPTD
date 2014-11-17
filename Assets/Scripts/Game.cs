@@ -51,8 +51,8 @@ public class Game : MonoBehaviour, IGame
     /// </summary>
     public Transform SpawnPoint;
 
-    private List<IHaveHitPoint> _allEnemies;
-    private IHaveHitPoint _keep;
+    private List<IHittable> _allEnemies;
+    private IHittable _keep;
 
     public enum GameResult
     {
@@ -63,8 +63,8 @@ public class Game : MonoBehaviour, IGame
 
     public void Start()
     {
-        _allEnemies = new List<IHaveHitPoint>();
-        _keep = GameObject.FindGameObjectWithTag("Keep").GetComponent<IHaveHitPoint>();
+        _allEnemies = new List<IHittable>();
+        _keep = GameObject.FindGameObjectWithTag("Keep").GetComponent<IHittable>();
         StartCoroutine(spawnEnemys());
         gameIsEnd = false;
         _status = GameResult.InProcess;
@@ -85,7 +85,7 @@ public class Game : MonoBehaviour, IGame
         {
             var enemy = Instantiate(i%2 == 0 ? EnemyPrototypeTwo : EnemyPrototypeOne);
             enemy.transform.position = SpawnPoint.position;
-            _allEnemies.Add(enemy.GetComponent<IHaveHitPoint>());
+            _allEnemies.Add(enemy.GetComponent<IHittable>());
             yield return new WaitForSeconds(_spawnInterval);
         }
     }

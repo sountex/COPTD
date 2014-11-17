@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 15.875, 8.5" name="CoreGameplay">
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 18.875, 8.5" name="CoreGameplay">
   <logicalClassDesignerModelMoniker Id="3bd7eea5-9520-41e3-9f6f-066d60cf7583" />
   <nestedChildShapes>
     <interfaceShape Id="750c0169-10fc-481a-9aa5-1b53b5c40186" absoluteBounds="2.375, 0.625, 1.5, 1.7309721742073694" hideQualifiedName="false" increaseHeight="0.18800345897674564" customColor="207, 223, 191">
@@ -32,7 +32,7 @@
       </nestedChildShapes>
     </classShape>
     <interfaceShape Id="d0c2a1a7-d87e-48b6-9dcb-a446de27d2cd" absoluteBounds="4.75, 0.625, 1.5, 1.5708159291744237" hideQualifiedName="false" increaseHeight="0.18800345897674564" customColor="207, 223, 191">
-      <interfaceMoniker Id="e65083eb-2493-4701-9314-121e86ac2233" LastKnownName="IHaveHitPoint" />
+      <interfaceMoniker Id="e65083eb-2493-4701-9314-121e86ac2233" LastKnownName="IHittable " />
       <nestedChildShapes>
         <AttributeElementListCompartment Id="3851f086-c56a-4275-802e-b46235aea823" absoluteBounds="4.765, 1.2030034589767458, 1.4700000000000002, 0.52148435761531176" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
         <OperationElementListCompartment Id="11d2a451-bc6e-4637-ae74-403102c03442" absoluteBounds="4.765, 1.7344878165920576, 1.4700000000000002, 0.36132811258236575" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
@@ -47,7 +47,7 @@
       </nodes>
     </realizationConnector>
     <interfaceShape Id="a32e1549-36e4-4d2e-b302-3fdc10d8d573" absoluteBounds="6.5, 0.625, 1.5, 1.2505034391085306" hideQualifiedName="false" increaseHeight="0.18800345897674564" customColor="207, 223, 191">
-      <interfaceMoniker Id="ee3739ea-e9f2-489a-9439-d035c1472031" LastKnownName="IApplyingDamage" />
+      <interfaceMoniker Id="ee3739ea-e9f2-489a-9439-d035c1472031" LastKnownName="IDamageDealer" />
       <nestedChildShapes>
         <AttributeElementListCompartment Id="d71388df-ef6d-44ab-89bd-fb6f99c6ebe8" absoluteBounds="6.515, 1.2030034589767458, 1.4700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
         <OperationElementListCompartment Id="5eb87a0b-ef9c-4c8d-99c1-b3673f82b7aa" absoluteBounds="6.515, 1.414175326526165, 1.4700000000000002, 0.36132811258236563" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
@@ -142,5 +142,12 @@
         <interfaceShapeMoniker Id="972ad369-3666-4b69-a3d6-815976284130" />
       </nodes>
     </realizationConnector>
+    <interfaceShape Id="69ebd2bc-caa8-4654-a76d-0702d2598bbe" absoluteBounds="17.125, 1.625, 1.5, 1.5429687152306246" hideQualifiedName="false" increaseHeight="0" customColor="207, 223, 191">
+      <interfaceMoniker Id="3071a4fd-bf33-4f71-a862-958744d365e6" LastKnownName="IGame" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="23983bd7-bfeb-476d-9ae6-7aa0639c0fb2" absoluteBounds="17.14, 2.015, 1.4700000000000002, 0.68164060264825832" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="9649efd9-6468-4e1b-b3c4-51b853229590" absoluteBounds="17.14, 2.7066406026482586, 1.4700000000000002, 0.36132811258236575" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </interfaceShape>
   </nestedChildShapes>
 </logicalClassDesignerDiagram>

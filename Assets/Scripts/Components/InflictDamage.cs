@@ -6,7 +6,7 @@ using UnityEngine;
 /// </summary>
 public class InflictDamage : MonoBehaviour, IInflictDamage
 {
-    private IHaveHitPoint _target;
+    private IHittable _target;
 
     [SerializeField]
     private int _damageValue;
@@ -22,7 +22,7 @@ public class InflictDamage : MonoBehaviour, IInflictDamage
     /// </summary>
     public float Cooldown { get { return _cooldown; } }
 
-    public void BeginDPS(IHaveHitPoint target)
+    public void BeginDPS(IHittable target)
     {
         if (_target != null) EndDPS();
         _target = target;

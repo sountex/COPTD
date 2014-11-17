@@ -16,7 +16,7 @@ public class AtackTrigger : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        var enemy = other.GetComponent<IHaveHitPoint>();
+        var enemy = other.GetComponent<IHittable>();
         if (enemy == null) return;
         SendMessage("AddCript", enemy);
         TrySelectTarget();
@@ -24,7 +24,7 @@ public class AtackTrigger : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D other)
     {
-        var enemy = other.GetComponent<IHaveHitPoint>();
+        var enemy = other.GetComponent<IHittable>();
         if (enemy == null) return;
         SendMessage("RemoveCript", enemy);
         _damager.EndDPS();
@@ -43,7 +43,7 @@ public class AtackTrigger : MonoBehaviour
     /// <summary>
     /// Обработка события когда нужна новая цель для атаки
     /// </summary>
-    public void CurrentTargetLose(IHaveHitPoint _target)
+    public void CurrentTargetLose(IHittable _target)
     {
         SendMessage("RemoveCript", _target);
         TrySelectTarget();

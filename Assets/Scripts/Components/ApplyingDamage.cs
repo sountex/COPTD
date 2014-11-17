@@ -2,7 +2,7 @@
 /// <summary>
 /// Компонент применяющий урон
 /// </summary>
-public class ApplyingDamage : MonoBehaviour, IApplyingDamage
+public class ApplyingDamage : MonoBehaviour, IDamageDealer
 {
     /// <summary>
     /// Простая логика применения урона

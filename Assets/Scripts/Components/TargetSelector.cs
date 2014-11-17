@@ -5,18 +5,18 @@ using UnityEngine;
 /// </summary>
 public class TargetSelector : MonoBehaviour, ITargetSelector
 {
-    protected List<IHaveHitPoint> allEnemy;
+    protected List<IHittable> allEnemy;
     
     public void Awake()
     {
-        allEnemy = new List<IHaveHitPoint>();
+        allEnemy = new List<IHittable>();
     }
 
     /// <summary>
     /// Обработка события добавления врага в список возможных целей
     /// </summary>
     /// <param name="enemy"></param>
-    public virtual void AddCript(IHaveHitPoint enemy)
+    public virtual void AddCript(IHittable enemy)
     {
         var go = enemy as HaveHitPoint;
         if (go.gameObject.tag != "Enemy") return;
@@ -27,7 +27,7 @@ public class TargetSelector : MonoBehaviour, ITargetSelector
     /// Обработка события удаления врага из списока возможных целей
     /// </summary>
     /// <param name="enemy"></param>
-    public virtual void RemoveCript(IHaveHitPoint enemy)
+    public virtual void RemoveCript(IHittable enemy)
     {
         allEnemy.Remove(enemy);
     }
@@ -37,7 +37,7 @@ public class TargetSelector : MonoBehaviour, ITargetSelector
     /// <remarks>Подефолту - первая цель в списке</remarks>
     /// </summary>
     /// <returns>null, если не найдена подходящая цель</returns>
-    public virtual IHaveHitPoint SelectTarger()
+    public virtual IHittable SelectTarger()
     {
         return allEnemy.Count > 0 ? allEnemy[0] : null;
     }

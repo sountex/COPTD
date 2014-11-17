@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(IHaveHitPoint))]
+[RequireComponent(typeof(IHittable))]
 public class HitPointUI : MonoBehaviour
 {
-    private IHaveHitPoint _iam;
+    private IHittable _iam;
     private int _maxHP;
 
     public Vector3 ProgressBarOffset;
@@ -11,7 +11,7 @@ public class HitPointUI : MonoBehaviour
 
     public void Awake()
     {
-        _iam = GetComponent<IHaveHitPoint>();
+        _iam = GetComponent<IHittable>();
         _maxHP = _iam.HP;
     }
 

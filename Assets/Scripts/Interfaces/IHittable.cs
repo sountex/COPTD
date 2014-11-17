@@ -1,4 +1,4 @@
-﻿public interface IHaveHitPoint
+﻿public interface IHittable 
 {
 	int HP { get; }
 

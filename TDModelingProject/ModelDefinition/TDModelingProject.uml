@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="ae2c11ac-f436-4d6f-88ff-05fc000e1ed0"
   name="TDModelingProject" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -380,7 +380,7 @@
                   <type_NamedElement>
                     <interfaceMoniker
                       Id="0f788cf4-83fb-4fd9-a6a6-0a149e77eda3"
-                      LastKnownName="IHaveHitPoint"
+                      LastKnownName="IHittable "
                       LastKnownLocation="TDModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -452,7 +452,7 @@
     <packageHasNamedElement>
       <Interface
         Id="0f788cf4-83fb-4fd9-a6a6-0a149e77eda3"
-        name="IHaveHitPoint"
+        name="IHittable "
         isAbstract="false"
         isLeaf="false">
         <appliedStereotypesInternal>
@@ -929,7 +929,7 @@
                   <type_NamedElement>
                     <interfaceMoniker
                       Id="0f788cf4-83fb-4fd9-a6a6-0a149e77eda3"
-                      LastKnownName="IHaveHitPoint"
+                      LastKnownName="IHittable "
                       LastKnownLocation="TDModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -1053,7 +1053,7 @@
             Id="0782bd6b-62ba-489c-9412-4bf5c31886f8">
             <interfaceMoniker
               Id="0f788cf4-83fb-4fd9-a6a6-0a149e77eda3"
-              LastKnownName="IHaveHitPoint"
+              LastKnownName="IHittable "
               LastKnownLocation="TDModelingProject.uml" />
           </interfaceRealization>
         </suppliersInternal>
@@ -1138,7 +1138,7 @@
     <packageHasNamedElement>
       <Interface
         Id="58ea8403-a02a-4499-83df-5698ad98a1bd"
-        name="IApplyingDamage"
+        name="IDamageDealer"
         isAbstract="false"
         isLeaf="false">
         <appliedStereotypesInternal>
@@ -1335,7 +1335,7 @@
             Id="cb726064-a7fa-426b-9ebd-30cd0245c36f">
             <interfaceMoniker
               Id="58ea8403-a02a-4499-83df-5698ad98a1bd"
-              LastKnownName="IApplyingDamage"
+              LastKnownName="IDamageDealer"
               LastKnownLocation="TDModelingProject.uml" />
           </interfaceRealization>
         </suppliersInternal>
@@ -1930,7 +1930,7 @@
                   <type_NamedElement>
                     <interfaceMoniker
                       Id="0f788cf4-83fb-4fd9-a6a6-0a149e77eda3"
-                      LastKnownName="IHaveHitPoint"
+                      LastKnownName="IHittable "
                       LastKnownLocation="TDModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -2066,7 +2066,7 @@
                   <type_NamedElement>
                     <interfaceMoniker
                       Id="0f788cf4-83fb-4fd9-a6a6-0a149e77eda3"
-                      LastKnownName="IHaveHitPoint"
+                      LastKnownName="IHittable "
                       LastKnownLocation="TDModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -2202,7 +2202,7 @@
                   <type_NamedElement>
                     <interfaceMoniker
                       Id="0f788cf4-83fb-4fd9-a6a6-0a149e77eda3"
-                      LastKnownName="IHaveHitPoint"
+                      LastKnownName="IHittable "
                       LastKnownLocation="TDModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -2338,7 +2338,7 @@
                   <type_NamedElement>
                     <interfaceMoniker
                       Id="0f788cf4-83fb-4fd9-a6a6-0a149e77eda3"
-                      LastKnownName="IHaveHitPoint"
+                      LastKnownName="IHittable "
                       LastKnownLocation="TDModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -2526,6 +2526,70 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
           </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="556de9d1-8110-46de-a82d-5fd76a7a8eac"
+        name="IGame"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedAttributes>
+          <property
+            Id="cae284a9-c075-4ca7-b45f-148c76f67448"
+            name="WaveCounts"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="TDModelingProject.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="5a251ac3-404b-4850-b765-3f8d8e833afd"
+            name="CurrentWave"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="TDModelingProject.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="0c3c28b9-8b39-45db-af8e-e554324c2f0d"
+            name="Status"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributes>
+        <ownedOperations>
+          <operation
+            Id="af7865dd-0ab3-47cd-8fae-ee5a08c577ba"
+            name="Start"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperations>
       </Interface>
     </packageHasNamedElement>

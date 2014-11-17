@@ -1,4 +1,4 @@
-﻿public interface IMoveOnRoute 
+﻿public interface IRouteFollower 
 {
     float Speed { get; }
 

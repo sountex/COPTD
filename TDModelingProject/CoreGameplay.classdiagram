@@ -78,32 +78,6 @@
       </propertyInstances>
     </stereotypeInstance>
   </appliedStereotypesInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="dc4fbe5f-548b-4802-ae4f-15f866a1b05d">
-      <profileInstance Id="5fbe8357-33fc-4e4d-b9c3-fae8f9e14ef2" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="5326685c-320e-4a88-bbee-91fabc952249">
-      <profileInstance Id="8642f5ef-c62a-46f9-bc0d-15a30c8365d9" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="e7074656-577d-4506-81dd-7f9ceb1ae96f">
-      <profileInstance Id="df092a87-ef7d-42d6-b5cb-6c3eaea98dfe" name="CSharpProfile">
-        <elementDefinition Id="e7380238-c09d-49bf-aa90-e6602ed06780" />
-      </profileInstance>
-      <elementDefinition Id="57ba7ad0-22ce-40d3-b5ef-90d3425b736d" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="11bd3e3b-2c2d-48e1-9c50-73d3ea488110">
-      <profileInstance Id="2f3b0bad-7bc4-44df-9ca9-cd68c4ee787f" name="TextTemplateBindings">
-        <elementDefinition Id="74d4e546-6859-405e-99e0-3ca63a2404fc" />
-      </profileInstance>
-      <elementDefinition Id="cd9979ff-85d3-46d3-b711-72cfe05fb3b7" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <Interface Id="72ad413e-8861-4169-bebd-efdf25d15732" name="IInflictDamage" isAbstract="false" isLeaf="false">
@@ -302,7 +276,7 @@
                 <parameter Id="52a4bc81-498e-4535-b9ff-b9eaa1864e7e" name="Target" direction="In">
                   <elementDefinition Id="9ceb7921-87f8-40bb-9836-e40949f286a3" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="0a167a43-e591-48fa-b818-23ef31fcd088" LastKnownName="IHaveHitPoint" />
+                    <referencedTypeMoniker Id="0a167a43-e591-48fa-b818-23ef31fcd088" LastKnownName="IHittable " />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -526,7 +500,7 @@
                 <parameter Id="97918fcb-304e-4e76-a53e-2d4278839a1b" direction="Return">
                   <elementDefinition Id="025daab7-2dea-43ac-ab60-83a2b64d2a20" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="0a167a43-e591-48fa-b818-23ef31fcd088" LastKnownName="IHaveHitPoint" />
+                    <referencedTypeMoniker Id="0a167a43-e591-48fa-b818-23ef31fcd088" LastKnownName="IHittable " />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -623,7 +597,7 @@
         <elementDefinition Id="eff1f2c9-01f9-4675-aab8-cf7fb7def37f" />
         <suppliersInternal>
           <interfaceRealization Id="9807996e-64ce-4a02-9803-a8e04debaa21">
-            <interfaceMoniker Id="e65083eb-2493-4701-9314-121e86ac2233" LastKnownName="IHaveHitPoint" />
+            <interfaceMoniker Id="e65083eb-2493-4701-9314-121e86ac2233" LastKnownName="IHittable " />
             <elementDefinition Id="0782bd6b-62ba-489c-9412-4bf5c31886f8" />
           </interfaceRealization>
         </suppliersInternal>
@@ -688,7 +662,7 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <Interface Id="e65083eb-2493-4701-9314-121e86ac2233" name="IHaveHitPoint" isAbstract="false" isLeaf="false">
+      <Interface Id="e65083eb-2493-4701-9314-121e86ac2233" name="IHittable " isAbstract="false" isLeaf="false">
         <appliedStereotypesInternal>
           <stereotypeInstance Id="4036251a-42c7-4d49-847b-e946002b15b0" name="interface" profile="CSharpProfile">
             <elementDefinition Id="0c91b1a8-6470-424e-bb03-13ce107a213a" />
@@ -899,7 +873,7 @@
       </referencedType>
     </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
-      <Interface Id="ee3739ea-e9f2-489a-9439-d035c1472031" name="IApplyingDamage" isAbstract="false" isLeaf="false">
+      <Interface Id="ee3739ea-e9f2-489a-9439-d035c1472031" name="IDamageDealer" isAbstract="false" isLeaf="false">
         <appliedStereotypesInternal>
           <stereotypeInstance Id="4157a458-2198-4795-8245-c1d36d7e0064" name="interface" profile="CSharpProfile">
             <elementDefinition Id="19568080-8a80-4cfc-8bf3-0ec711731d21" />
@@ -978,6 +952,32 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <elementDefinition Id="921ad93f-b2f5-41e9-9344-913c589a1a0d" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="31340517-ace7-40c9-9bf4-5787c344d7da" name="currentHP" direction="In">
+                  <elementDefinition Id="984138ea-b236-4ae9-a434-84ab160969d5" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6299ae4c-af96-4ff5-92de-5642f7337746" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e81780d2-278c-423e-804e-05b1e732d1ce" name="value" direction="In">
+                  <elementDefinition Id="3cd4fcad-25a6-4d8b-90e2-8e28fa1cfee1" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6299ae4c-af96-4ff5-92de-5642f7337746" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="74e16b0c-068b-4e5a-9a79-c1a02e39cc16" direction="Return">
+                  <elementDefinition Id="d505ffea-0de2-448f-9218-fa890da51fa3" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6299ae4c-af96-4ff5-92de-5642f7337746" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperations>
       </Interface>
@@ -1024,7 +1024,7 @@
         <elementDefinition Id="c09be59b-ed12-4550-83ef-6746e38795b3" />
         <suppliersInternal>
           <interfaceRealization Id="f4da03d7-ed83-4811-861e-fb3d634e3dda">
-            <interfaceMoniker Id="ee3739ea-e9f2-489a-9439-d035c1472031" LastKnownName="IApplyingDamage" />
+            <interfaceMoniker Id="ee3739ea-e9f2-489a-9439-d035c1472031" LastKnownName="IDamageDealer" />
             <elementDefinition Id="cb726064-a7fa-426b-9ebd-30cd0245c36f" />
           </interfaceRealization>
         </suppliersInternal>
@@ -1074,6 +1074,32 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <elementDefinition Id="7bb3f624-6eea-4591-a3f6-6e7866881a5d" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="585a92ec-524f-4ba8-af9b-bf4fdd09adf7" name="currentHP" direction="In">
+                  <elementDefinition Id="016ecc49-bb49-4396-9693-70112b29b37b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6299ae4c-af96-4ff5-92de-5642f7337746" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3fec3a68-e093-4599-ba7a-dedf2afdaca2" name="value" direction="In">
+                  <elementDefinition Id="70906c2d-987c-4bc3-b639-31ab75cd516e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6299ae4c-af96-4ff5-92de-5642f7337746" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a6fc8dd2-95fa-4ce2-9eea-2b46e1ad97a4" direction="Return">
+                  <elementDefinition Id="66b27383-5b13-4be9-b707-eb0d0929a5eb" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6299ae4c-af96-4ff5-92de-5642f7337746" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -1458,7 +1484,7 @@
                 <parameter Id="7be0ddd0-41ec-44e7-9d60-06f7c6f73009" direction="Return">
                   <elementDefinition Id="07c3032a-72de-416a-84fa-cbaf2e1fe702" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="0085f11e-975d-4037-a6f3-77409b223935" LastKnownName="IHaveHitPoint" />
+                    <referencedTypeMoniker Id="0085f11e-975d-4037-a6f3-77409b223935" LastKnownName="IHittable " />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -1473,7 +1499,7 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="0a167a43-e591-48fa-b818-23ef31fcd088" name="IHaveHitPoint" isAbstract="false" isLeaf="false" cachedFullName="TDModelingProject::IHaveHitPoint">
+      <referencedType Id="0a167a43-e591-48fa-b818-23ef31fcd088" name="IHittable " isAbstract="false" isLeaf="false" cachedFullName="TDModelingProject::IHittable ">
         <elementDefinition Id="0f788cf4-83fb-4fd9-a6a6-0a149e77eda3" />
       </referencedType>
     </packageHasNamedElement>
@@ -1483,7 +1509,7 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="0085f11e-975d-4037-a6f3-77409b223935" name="IHaveHitPoint" isAbstract="false" isLeaf="false" cachedFullName="TDModelingProject::IHaveHitPoint">
+      <referencedType Id="0085f11e-975d-4037-a6f3-77409b223935" name="IHittable " isAbstract="false" isLeaf="false" cachedFullName="TDModelingProject::IHittable ">
         <elementDefinition Id="0f788cf4-83fb-4fd9-a6a6-0a149e77eda3" />
       </referencedType>
     </packageHasNamedElement>
@@ -1584,7 +1610,7 @@
                 <parameter Id="99a9794a-ca74-46cb-a1b5-d1e67e6a32e0" direction="Return">
                   <elementDefinition Id="970b2d84-25b0-49de-855c-44e94a44ced5" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="0a167a43-e591-48fa-b818-23ef31fcd088" LastKnownName="IHaveHitPoint" />
+                    <referencedTypeMoniker Id="0a167a43-e591-48fa-b818-23ef31fcd088" LastKnownName="IHittable " />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -1690,7 +1716,7 @@
                 <parameter Id="c50b5fde-52f3-4a4f-b793-fe11a2958e08" direction="Return">
                   <elementDefinition Id="90b902f7-915f-49bf-8a5c-aaa2729ee4f3" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="0a167a43-e591-48fa-b818-23ef31fcd088" LastKnownName="IHaveHitPoint" />
+                    <referencedTypeMoniker Id="0a167a43-e591-48fa-b818-23ef31fcd088" LastKnownName="IHittable " />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -1796,7 +1822,7 @@
                 <parameter Id="00fb4b79-e1dc-48fc-89ec-7a2e4345e172" direction="Return">
                   <elementDefinition Id="44197a59-71cc-411d-8e7b-e22484ae0a95" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="0a167a43-e591-48fa-b818-23ef31fcd088" LastKnownName="IHaveHitPoint" />
+                    <referencedTypeMoniker Id="0a167a43-e591-48fa-b818-23ef31fcd088" LastKnownName="IHittable " />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -1805,8 +1831,61 @@
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="3071a4fd-bf33-4f71-a862-958744d365e6" name="IGame" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="556de9d1-8110-46de-a82d-5fd76a7a8eac" />
+        <ownedAttributes>
+          <property Id="ee068b3e-c5b8-40c3-862d-7bdfc3e7ec90" name="WaveCounts" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="cae284a9-c075-4ca7-b45f-148c76f67448" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="6299ae4c-af96-4ff5-92de-5642f7337746" LastKnownName="Integer" />
+            </type_NamedElement>
+          </property>
+          <property Id="64c0ed18-325a-481f-a6f8-a8ca63860e7d" name="CurrentWave" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5a251ac3-404b-4850-b765-3f8d8e833afd" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="6299ae4c-af96-4ff5-92de-5642f7337746" LastKnownName="Integer" />
+            </type_NamedElement>
+          </property>
+          <property Id="2139e33b-d248-4cc0-902a-426bfebca0af" name="Status" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0c3c28b9-8b39-45db-af8e-e554324c2f0d" />
+          </property>
+        </ownedAttributes>
+        <ownedOperations>
+          <operation Id="308be5f4-ff70-4ac0-abc8-5ce255776a4a" name="Start" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="af7865dd-0ab3-47cd-8fae-ee5a08c577ba" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="b5806610-95ce-48e2-8c83-887447355f0d" name="TDModelingProject">
     <elementDefinition Id="ae2c11ac-f436-4d6f-88ff-05fc000e1ed0" />
+    <profileInstances>
+      <packageHasProfileInstances Id="dc4fbe5f-548b-4802-ae4f-15f866a1b05d">
+        <profileInstance Id="5fbe8357-33fc-4e4d-b9c3-fae8f9e14ef2" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="5326685c-320e-4a88-bbee-91fabc952249">
+        <profileInstance Id="8642f5ef-c62a-46f9-bc0d-15a30c8365d9" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="e7074656-577d-4506-81dd-7f9ceb1ae96f">
+        <profileInstance Id="df092a87-ef7d-42d6-b5cb-6c3eaea98dfe" name="CSharpProfile">
+          <elementDefinition Id="e7380238-c09d-49bf-aa90-e6602ed06780" />
+        </profileInstance>
+        <elementDefinition Id="57ba7ad0-22ce-40d3-b5ef-90d3425b736d" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="11bd3e3b-2c2d-48e1-9c50-73d3ea488110">
+        <profileInstance Id="2f3b0bad-7bc4-44df-9ca9-cd68c4ee787f" name="TextTemplateBindings">
+          <elementDefinition Id="74d4e546-6859-405e-99e0-3ca63a2404fc" />
+        </profileInstance>
+        <elementDefinition Id="cd9979ff-85d3-46d3-b711-72cfe05fb3b7" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

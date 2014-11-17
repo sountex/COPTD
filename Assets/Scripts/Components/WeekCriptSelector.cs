@@ -4,7 +4,7 @@
 /// </summary>
 public class WeekCriptSelector : TargetSelector
 {
-    public override IHaveHitPoint SelectTarger()
+    public override IHittable SelectTarger()
     {
         if (allEnemy.Count > 0) 
             return allEnemy.OrderBy(enemy => enemy.HP).ToList()[allEnemy.Count];

@@ -3,8 +3,8 @@
 /// <summary>
 /// Компонент применяющий к себе урон
 /// </summary>
-[RequireComponent(typeof(IApplyingDamage))]
-public class HaveHitPoint : MonoBehaviour, IHaveHitPoint
+[RequireComponent(typeof(IDamageDealer))]
+public class HaveHitPoint : MonoBehaviour, IHittable
 {
     [SerializeField]
     private int _hp;
@@ -22,12 +22,12 @@ public class HaveHitPoint : MonoBehaviour, IHaveHitPoint
     {
         get { return _hp <= 0; }
     }
-    
-    private IApplyingDamage _applyingDamage;
+
+    private IDamageDealer _applyingDamage;
 
     public void Awake()
     {
-        _applyingDamage = this.GetComponent<IApplyingDamage>();
+        _applyingDamage = this.GetComponent<IDamageDealer>();
         _maxHP = _hp;
     }
     /// <summary>
