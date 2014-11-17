@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/PROGRAM FILES (X86)/MICROSOFT VISUAL STUDIO 12.0/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/CodeGenLog.xslt"?>
+<Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log" Label="Журнал создания кода/преобразования текста">
+  <MessageClass Name="Message" Label="Сообщение" Option="Показывать информационные сообщения" />
+  <MessageClass Name="Warning" Label="Предупреждение" Option="Показывать предупреждения" />
+  <MessageClass Name="Error" Label="Ошибка" Option="Показывать ошибки" />
+  <MessageClass Name="Property" Label="Свойство" Option="Показывать метаданные" />
+  <MessageClass Name="Diagnostic" Label="Сообщение" Option="Показывать диагностические сообщения" />
+  <Message Timestamp="2014-11-16T14:18:05" Importance="High" Text="Запущено создание кода или преобразование текста." />
+  <Message Timestamp="2014-11-16T14:18:05" Importance="Diagnostic" Text="Имя = InterfaceTemplate" />
+  <Message Timestamp="2014-11-16T14:18:05" Importance="Diagnostic" Text="Перезаписать = True" />
+  <Message Timestamp="2014-11-16T14:18:05" Importance="Diagnostic" Text="ProjectPath = ..\TDModelingProjectLib\TDModelingProjectLib.csproj" />
+  <Message Timestamp="2014-11-16T14:18:05" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2014-11-16T14:18:05" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2014-11-16T14:18:05" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4" />
+  <Message Timestamp="2014-11-16T14:18:05" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4" />
+  <Message Timestamp="2014-11-16T14:18:05" Importance="Medium" Text="Привязка шаблона текста, принадлежащая TDModelingProject: &quot;InterfaceTemplate&quot; применит InterfaceTemplate.t4 к: &quot;TDModelingProject::IMoveOnRoute&quot; -  (Interface) " />
+  <Message Timestamp="2014-11-16T14:18:06" Importance="Medium" Text="&quot;TDModelingProject::IMoveOnRoute&quot; -  (Interface) : успешно (файл создан) - C:\Projects\TowerDefenseCore\TDModelingProjectLib\GeneratedCode\IMoveOnRoute.cs" />
+  <Message Timestamp="2014-11-16T14:18:07" Importance="High" Text="Создание кода завершено. Ошибок: 0. Предупреждений: 0." />
+</Log>
