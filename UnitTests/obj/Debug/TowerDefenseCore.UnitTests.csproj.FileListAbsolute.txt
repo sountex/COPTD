@@ -1,0 +1,5 @@
+C:\Projects\TowerDefenseCore\Assets\Tests\TowerDefenseCore.UnitTests.dll
+C:\Projects\TowerDefenseCore\Assets\Tests\TowerDefenseCore.UnitTests.pdb
+C:\Projects\TowerDefenseCore\UnitTests\obj\Debug\TowerDefenseCore.UnitTests.csprojResolveAssemblyReference.cache
+C:\Projects\TowerDefenseCore\UnitTests\obj\Debug\TowerDefenseCore.UnitTests.dll
+C:\Projects\TowerDefenseCore\UnitTests\obj\Debug\TowerDefenseCore.UnitTests.pdb

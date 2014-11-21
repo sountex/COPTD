@@ -7,10 +7,8 @@
 public class HaveHitPoint : MonoBehaviour, IHittable
 {
     [SerializeField]
-    private int _hp;
-
-    private int _maxHP;
-
+    private int _hp = 100;
+    
     /// <summary>
     /// Количество очков жизни
     /// </summary>
@@ -27,8 +25,7 @@ public class HaveHitPoint : MonoBehaviour, IHittable
 
     public void Awake()
     {
-        _applyingDamage = this.GetComponent<IDamageDealer>();
-        _maxHP = _hp;
+        _applyingDamage = this.GetComponent<ApplyingDamage>();
     }
     /// <summary>
     /// Нанесения урона цели через IApplyingDamage
@@ -38,22 +35,15 @@ public class HaveHitPoint : MonoBehaviour, IHittable
 	{
         if (IsDead) return;
         _hp = _applyingDamage.ImpactDamage(_hp, dmgValue);
-        VisualizeImpactDamage();
         if (IsDead)
         {
             SendMessage("HaveHitPointIsDead", SendMessageOptions.DontRequireReceiver);
-            //Отключим рендер и отметим объект для юнити на удаление
-            GetComponent<Renderer>().enabled = false;
+            //отметим объект для юнити на удаление
             Destroy(gameObject);
         }
+        else
+            SendMessage("HaveHitPointIsDamaged", SendMessageOptions.DontRequireReceiver);
 	}
-
-    //Пример визуализация получения урона
-    private void VisualizeImpactDamage()
-    {
-        if (_hp < _maxHP/4)//Присмерти
-            GetComponent<SpriteRenderer>().color = Color.red;
-    }
 
 }
 

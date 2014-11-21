@@ -10,13 +10,13 @@ public class AtackTrigger : MonoBehaviour
 
     public void Awake()
     {
-        _damager = this.GetComponent<IInflictDamage>();
-        _targetSelector = this.GetComponent<ITargetSelector>();
+        _damager = this.GetComponent<InflictDamage>();
+        _targetSelector = this.GetComponent<TargetSelector>();
     }
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        var enemy = other.GetComponent<IHittable>();
+        var enemy = other.GetComponent<HaveHitPoint>();
         if (enemy == null) return;
         SendMessage("AddCript", enemy);
         TrySelectTarget();
@@ -24,7 +24,7 @@ public class AtackTrigger : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D other)
     {
-        var enemy = other.GetComponent<IHittable>();
+        var enemy = other.GetComponent<HaveHitPoint>();
         if (enemy == null) return;
         SendMessage("RemoveCript", enemy);
         _damager.EndDPS();

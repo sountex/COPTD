@@ -39,34 +39,55 @@ public class Game : MonoBehaviour, IGame
     public GameResult Status { get { return _status; } }
 
     /// <summary>
-    /// Прототип для инстанционирования первого типа - простой крипт
+    /// Прототип для инстанционирования первого типа - простой крип
     /// </summary>
-    public GameObject EnemyPrototypeOne;
+    [SerializeField]
+    private GameObject EnemyPrototypeOne;
     /// <summary>
-    /// Прототип для инстанционирования второго типа - сильный крипт
+    /// Прототип для инстанционирования второго типа - сильный крип
     /// </summary>
-    public GameObject EnemyPrototypeTwo;
+    [SerializeField]
+    private GameObject EnemyPrototypeTwo;
     /// <summary>
     /// Точка спауна
     /// </summary>
-    public Transform SpawnPoint;
+    [SerializeField]
+    private Transform SpawnPoint;
+    /// <summary>
+    /// Трансформ для всех созданных крипов
+    /// </summary>
+    [SerializeField]
+    private Transform CripGameObjectsHolder;
 
     private List<IHittable> _allEnemies;
     private IHittable _keep;
 
+    private ITowerBuilder _builder;
     public enum GameResult
     {
+        NotStarted,
+        InBuildProcess,
         InProcess,
         Victory,
         Lose
     }
 
-    public void Start()
+    public void StartGame()
     {
         _allEnemies = new List<IHittable>();
-        _keep = GameObject.FindGameObjectWithTag("Keep").GetComponent<IHittable>();
-        StartCoroutine(spawnEnemys());
+        _builder = FindObjectOfType<TowerBuilder>();
+        _keep = GameObject.FindGameObjectWithTag("Keep").GetComponent<HaveHitPoint>();
         gameIsEnd = false;
+        _status = GameResult.InBuildProcess;
+        _builder.ShowUI = true;
+    }
+
+    /// <summary>
+    /// Обработаем событие, когда все башни построены - начнём игру
+    /// </summary>
+    public void OnTowersIsBuild()
+    {
+        StartCoroutine(spawnEnemys());
         _status = GameResult.InProcess;
     }
 
@@ -83,20 +104,24 @@ public class Game : MonoBehaviour, IGame
         int count = _criptsPerWave * _currentWave;
         for (int i = 0; i < count; i++)
         {
-            var enemy = Instantiate(i%2 == 0 ? EnemyPrototypeTwo : EnemyPrototypeOne);
+            var enemy = Instantiate(i%2 == 0 ? EnemyPrototypeTwo : EnemyPrototypeOne) as GameObject;
+            enemy.transform.parent = CripGameObjectsHolder;
             enemy.transform.position = SpawnPoint.position;
-            _allEnemies.Add(enemy.GetComponent<IHittable>());
+            _allEnemies.Add(enemy.GetComponent<HaveHitPoint>());
             yield return new WaitForSeconds(_spawnInterval);
         }
     }
+
     /// <summary>
-    /// Основная логика игры - если дом уничтожен то проигрыш, если уничтожены все крипты но не последняя волна то спауним ещё,
+    /// Основная логика игры - если дом уничтожен то проигрыш, если уничтожены все крипы, но не последняя волна, то спауним ещё,
     /// если волна последняя и дом не разрушен то победили.
     /// </summary>
     public void Update()
     {
-        if(gameIsEnd) return;
-
+        if (Status == GameResult.NotStarted 
+            || Status == GameResult.InBuildProcess
+            || gameIsEnd) return;
+        
         if(_keep.IsDead) 
             GameOver(GameResult.Lose);
 

@@ -1,0 +1,5 @@
+C:\Projects\TowerDefenseCore\Assets\Tests\TowerDefenseCore.Specs.dll
+C:\Projects\TowerDefenseCore\Assets\Tests\TowerDefenseCore.Specs.pdb
+C:\Projects\TowerDefenseCore\TowerDefenseCore.Specs\obj\Debug\TowerDefenseCore.Specs.csprojResolveAssemblyReference.cache
+C:\Projects\TowerDefenseCore\TowerDefenseCore.Specs\obj\Debug\TowerDefenseCore.Specs.dll
+C:\Projects\TowerDefenseCore\TowerDefenseCore.Specs\obj\Debug\TowerDefenseCore.Specs.pdb

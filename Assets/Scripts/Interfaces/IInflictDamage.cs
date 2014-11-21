@@ -1,4 +1,5 @@
-﻿public interface IInflictDamage  
+﻿
+public interface IInflictDamage
 {
 	int DamageValue { get; }
 

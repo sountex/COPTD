@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
-MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.TowerDefenseCore.CSharp", "UnityVS.TowerDefenseCore.CSharp.csproj", "{A394F4C7-1AB4-A422-3C87-97D2A7BF7A75}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.TowerDefenseCore.CSharp.Editor", "UnityVS.TowerDefenseCore.CSharp.Editor.csproj", "{EF3FDE72-AF44-A218-4F68-46127C0FEE74}"
+EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "TDModelingProject", "TDModelingProject\TDModelingProject.modelproj", "{A775D785-5EC7-4C8C-A852-C4F633F0E9A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerDefenseCore.UnitTests", "UnitTests\TowerDefenseCore.UnitTests.csproj", "{CBE44C55-326E-4255-8EF2-7F40F833818F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerDefenseCore.Specs", "TowerDefenseCore.Specs\TowerDefenseCore.Specs.csproj", "{1E71D6AC-7C97-44F4-84DF-DDFCCEEDDD0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +21,22 @@ Global
 		{A394F4C7-1AB4-A422-3C87-97D2A7BF7A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A394F4C7-1AB4-A422-3C87-97D2A7BF7A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A394F4C7-1AB4-A422-3C87-97D2A7BF7A75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF3FDE72-AF44-A218-4F68-46127C0FEE74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF3FDE72-AF44-A218-4F68-46127C0FEE74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF3FDE72-AF44-A218-4F68-46127C0FEE74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF3FDE72-AF44-A218-4F68-46127C0FEE74}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A775D785-5EC7-4C8C-A852-C4F633F0E9A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A775D785-5EC7-4C8C-A852-C4F633F0E9A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A775D785-5EC7-4C8C-A852-C4F633F0E9A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A775D785-5EC7-4C8C-A852-C4F633F0E9A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBE44C55-326E-4255-8EF2-7F40F833818F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBE44C55-326E-4255-8EF2-7F40F833818F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBE44C55-326E-4255-8EF2-7F40F833818F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBE44C55-326E-4255-8EF2-7F40F833818F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E71D6AC-7C97-44F4-84DF-DDFCCEEDDD0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E71D6AC-7C97-44F4-84DF-DDFCCEEDDD0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E71D6AC-7C97-44F4-84DF-DDFCCEEDDD0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E71D6AC-7C97-44F4-84DF-DDFCCEEDDD0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

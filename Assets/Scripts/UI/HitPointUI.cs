@@ -11,8 +11,24 @@ public class HitPointUI : MonoBehaviour
 
     public void Awake()
     {
-        _iam = GetComponent<IHittable>();
+        _iam = GetComponent<HaveHitPoint>();
         _maxHP = _iam.HP;
+    }
+
+     /// <summary>
+     /// Обрабортка события получения урона
+     /// </summary>
+    public void HaveHitPointIsDamaged()
+    {
+        if (_iam.HP < _maxHP / 4)//Присмерти
+            GetComponent<SpriteRenderer>().color = Color.red;
+    }
+    /// <summary>
+    /// Обработка события смерти
+    /// </summary>
+    public void HaveHitPointIsDead()
+    {
+        GetComponent<SpriteRenderer>().enabled = false;
     }
 
     public void OnGUI()
