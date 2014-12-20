@@ -4,23 +4,30 @@ using UnityEngine;
 /// <summary>
 /// Компонент наносящий перидоческий урон цели
 /// </summary>
+[DisallowMultipleComponent]
+[AddComponentMenu("TDCore/InflictDamage")]
 public class InflictDamage : MonoBehaviour, IInflictDamage
 {
     private IHittable _target;
 
     [SerializeField]
-    private int _damageValue;
+    private int _damageValue = 5;
     /// <summary>
     /// Количество наносимого урона
     /// </summary>
     public int DamageValue { get { return _damageValue; } }
 
     [SerializeField]
-    private float _cooldown;
+    private float _cooldown = 0.5f;
     /// <summary>
     /// Пауза между каждым нанесением урона
     /// </summary>
     public float Cooldown { get { return _cooldown; } }
+
+    public void Update()
+    {
+        
+    }
 
     public void BeginDPS(IHittable target)
     {
@@ -33,7 +40,7 @@ public class InflictDamage : MonoBehaviour, IInflictDamage
     /// Наносит цели периодический урон
     /// </summary>
     /// <returns></returns>
-    private IEnumerator inflictDamage() 
+    public IEnumerator inflictDamage() 
     {
         while (_target != null && !_target.IsDead)
         {

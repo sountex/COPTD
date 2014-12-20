@@ -2,6 +2,8 @@
 /// <summary>
 /// Компонент применяющий урон
 /// </summary>
+[DisallowMultipleComponent]
+[AddComponentMenu("TDCore/ApplyingDamage")]
 public class ApplyingDamage : MonoBehaviour, IDamageDealer
 {
     /// <summary>

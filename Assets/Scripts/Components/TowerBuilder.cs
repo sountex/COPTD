@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-
+[DisallowMultipleComponent]
+[AddComponentMenu("TDCore/TowerBuilder")]
 public class TowerBuilder : MonoBehaviour, ITowerBuilder
 {
     /// <summary>

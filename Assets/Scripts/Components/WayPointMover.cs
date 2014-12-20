@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[DisallowMultipleComponent]
+[AddComponentMenu("TDCore/WayPointMover")]
 public class WayPointMover : MonoBehaviour
 {
     [SerializeField] 

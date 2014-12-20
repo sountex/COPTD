@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof (ITowerBuilder))]
+[DisallowMultipleComponent]
 public class TowerBuilderUI : MonoBehaviour
 {
     private ITowerBuilder _builder;
-    private readonly Rect uiRect = new Rect(Screen.width/2, Screen.height/2, 150, 200);
+    private const float towerInfoWindowWidth = 250;
+    private const float towerInfoWindowHeight = 450;
+    private readonly Rect uiRect = new Rect(Screen.width / 2 - towerInfoWindowWidth/2, Screen.height / 2 - towerInfoWindowHeight/2, towerInfoWindowWidth, towerInfoWindowHeight);
 
     private bool selectTowerSpawnMode = false;
     private int selectTowerIndx;
@@ -30,11 +33,19 @@ public class TowerBuilderUI : MonoBehaviour
         GUILayout.Label("Выберите башню для постройки, и укажите где её построить");
         for (int i = 0; i < _builder.TowersForBuild.Length; i++)
         {
-            if (GUILayout.Button("Башня " + _builder.TowersForBuild[i].name))
+            var tower = _builder.TowersForBuild[i];
+            GUILayout.BeginVertical();
+            GUILayout.Label(string.Format("Башня {0}", tower.name));
+            GUILayout.Label(string.Format("Радиус действия: {0}", tower.GetComponent<CircleCollider2D>().radius));
+            GUILayout.Label(string.Format("Урон: {0} ед каждые {1} сек", tower.GetComponent<InflictDamage>().DamageValue, tower.GetComponent<InflictDamage>().Cooldown));
+            if (tower.GetComponent<WeekCriptSelector>() != null)
+                GUILayout.Label("Особенность: В первую очередь атакует самую слабую цель из доступных");
+            if (GUILayout.Button("Построить"))
             {
                 selectTowerSpawnMode = true;
                 selectTowerIndx = i;
             }
+            GUILayout.EndVertical();
         }
         GUILayout.EndArea();
     }

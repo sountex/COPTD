@@ -1,7 +1,11 @@
 ﻿using System.Linq;
+using UnityEngine;
+
 /// <summary>
 /// Компонент реализующий логику выбора самого слабого врага их доступных
 /// </summary>
+[DisallowMultipleComponent]
+[AddComponentMenu("TDCore/TargetSelector/WeekCriptSelector")]
 public class WeekCriptSelector : TargetSelector
 {
     public override IHittable SelectTarger()

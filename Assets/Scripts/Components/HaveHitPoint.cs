@@ -4,6 +4,8 @@
 /// Компонент применяющий к себе урон
 /// </summary>
 [RequireComponent(typeof(IDamageDealer))]
+[DisallowMultipleComponent]
+[AddComponentMenu("TDCore/HaveHitPoint")]
 public class HaveHitPoint : MonoBehaviour, IHittable
 {
     [SerializeField]
@@ -38,6 +40,7 @@ public class HaveHitPoint : MonoBehaviour, IHittable
         if (IsDead)
         {
             SendMessage("HaveHitPointIsDead", SendMessageOptions.DontRequireReceiver);
+          
             //отметим объект для юнити на удаление
             Destroy(gameObject);
         }

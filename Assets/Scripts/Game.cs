@@ -4,6 +4,8 @@ using System.Collections.Generic;
 /// <summary>
 /// Компонент основной бизнес-логики игры
 /// </summary>
+[DisallowMultipleComponent]
+[AddComponentMenu("TDCore/Game")]
 public class Game : MonoBehaviour, IGame
 {
     [SerializeField]
@@ -70,6 +72,12 @@ public class Game : MonoBehaviour, IGame
         InProcess,
         Victory,
         Lose
+    }
+
+    public void Awake()
+    {
+        //Ограничем fps для 2D игры в 30.
+        Application.targetFrameRate = 30;
     }
 
     public void StartGame()

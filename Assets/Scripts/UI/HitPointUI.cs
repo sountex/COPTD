@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 [RequireComponent(typeof(IHittable))]
+[DisallowMultipleComponent]
 public class HitPointUI : MonoBehaviour
 {
     private IHittable _iam;
@@ -9,10 +11,19 @@ public class HitPointUI : MonoBehaviour
     public Vector3 ProgressBarOffset;
     public Texture2D ProgressBar;
 
+    private Rect pbPosition;
+    private Rect pbSize;
+    private float progress;
+
     public void Awake()
     {
         _iam = GetComponent<HaveHitPoint>();
         _maxHP = _iam.HP;
+    }
+
+    public void Start()
+    {
+        StartCoroutine(pbPositionUpdater());
     }
 
      /// <summary>
@@ -31,13 +42,21 @@ public class HitPointUI : MonoBehaviour
         GetComponent<SpriteRenderer>().enabled = false;
     }
 
+    private IEnumerator pbPositionUpdater()
+    {
+        while (!_iam.IsDead)
+        {
+            progress = (float)_iam.HP / _maxHP;
+            var pos = Camera.main.WorldToScreenPoint(gameObject.transform.position + ProgressBarOffset);
+            pbPosition = new Rect(pos.x, Screen.height - pos.y - ProgressBar.height, ProgressBar.width * progress,
+                ProgressBar.height);
+            pbSize = new Rect(0, 0, 1f * progress, 1f);
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+
     public void OnGUI()
     {
-        var pos = Camera.main.WorldToScreenPoint(gameObject.transform.position + ProgressBarOffset);
-        float progress = (float) _iam.HP/_maxHP;
-        GUI.DrawTextureWithTexCoords(
-            new Rect(pos.x, Screen.height - pos.y - ProgressBar.height, ProgressBar.width * progress, ProgressBar.height),
-            ProgressBar,
-            new Rect(0, 0, 1f * progress, 1f), true);
+        GUI.DrawTextureWithTexCoords(pbPosition, ProgressBar, pbSize, true);
     }
 }

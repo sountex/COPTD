@@ -3,6 +3,8 @@
 /// Компонент реагирующий на OnTriggerEnter2D/OnTriggerExit2D для инициализации выбора врага для атаки
 /// </summary>
 [RequireComponent(typeof(Rigidbody2D), typeof(IInflictDamage), typeof(ITargetSelector))]
+[DisallowMultipleComponent]
+[AddComponentMenu("TDCore/AtackTrigger")]
 public class AtackTrigger : MonoBehaviour
 {
     private IInflictDamage _damager;

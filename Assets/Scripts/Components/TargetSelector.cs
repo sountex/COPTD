@@ -3,6 +3,8 @@ using UnityEngine;
 /// <summary>
 /// Базовый компонент выбора врага для атаки, с дефолтной реализацией
 /// </summary>
+[DisallowMultipleComponent]
+[AddComponentMenu("TDCore/TargetSelector/Default")]
 public class TargetSelector : MonoBehaviour, ITargetSelector
 {
     protected List<IHittable> allEnemy;

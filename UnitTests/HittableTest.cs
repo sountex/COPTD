@@ -1,21 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using UnityEngine;
 
 namespace UnitTests
 {
+    /// <summary>
+    /// Простой пример теста компонента без GameObject.Instantiate объекта
+    /// </summary>
     [TestFixture]
     public class HittableTest
     {
-        [SetUp]
-        public void SetUpTests()
-        {
-            
-        }
-
         [Test]
         public void ApplyingDamage_ImpactDamage()
         {

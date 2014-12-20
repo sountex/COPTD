@@ -1,4 +1,8 @@
-﻿public class KeepSelector : TargetSelector
+﻿using UnityEngine;
+
+[DisallowMultipleComponent]
+[AddComponentMenu("TDCore/TargetSelector/KeepSelector")]
+public class KeepSelector : TargetSelector
 {
     /// <summary>
     /// Переопределение логики добавления цели для атаки - проверка, что это Keep

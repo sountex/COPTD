@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof (IGame))]
+[DisallowMultipleComponent]
 public class GameUI : MonoBehaviour
 {
     private IGame _game;
